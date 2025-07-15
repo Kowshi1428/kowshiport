@@ -5,54 +5,121 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kowshalya Parameswaran | Developer Portfolio</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    html, body {
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      height: 100%;
       background: #004d40;
-      color: white;
-      padding: 2rem;
-      text-align: center;
     }
+
+    /* Particle container */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: #004d40;
+    }
+
+    header {
+      text-align: center;
+      padding: 6rem 1rem 4rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      color: #b2dfdb;
+    }
+
     section {
       max-width: 900px;
       margin: auto;
       padding: 2rem;
+      background: rgba(0, 77, 64, 0.7);
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      animation: fadeIn 1s ease-in;
     }
+
     h2 {
-      color: #004d40;
+      color: #80cbc4;
       margin-top: 2rem;
+      border-bottom: 2px solid #4db6ac;
+      padding-bottom: 5px;
     }
+
     a {
-      color: #00796b;
+      color: #00e5ff;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
+
+    ul {
+      list-style-type: square;
+      padding-left: 1.5rem;
+    }
+
     .project {
-      background: #e0f2f1;
+      background: rgba(224, 247, 250, 0.1);
       padding: 1rem;
       margin-top: 1rem;
-      border-radius: 8px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
     }
+
+    .project:hover {
+      transform: translateY(-5px);
+    }
+
     footer {
-      background: #004d40;
+      background: rgba(0, 77, 64, 0.8);
       color: white;
       text-align: center;
       padding: 1rem;
-      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      section {
+        margin: 1rem;
+        padding: 1rem;
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Particle background -->
+  <div id="particles-js"></div>
+
   <header>
     <h1>Kowshalya Parameswaran</h1>
-    <p>CSE Student | Aspiring Software Developer </p>
+    <p>CSE Student | Aspiring Software Developer</p>
   </header>
 
   <section>
@@ -75,9 +142,9 @@
     </div>
 
     <h2>Education</h2>
-    <p><strong>Kamaraj College of Engineering and Technology</strong><br/>
-    B.E. – Computer Science and Engineering<br/>
-    2023 – 2027</p>
+    <p><strong>Kamaraj College of Engineering and Technology</strong><br />
+      B.E. – Computer Science and Engineering<br />
+      2023 – 2027</p>
 
     <h2>Certifications</h2>
     <ul>
@@ -96,5 +163,45 @@
   <footer>
     <p>© 2025 Kowshalya Parameswaran</p>
   </footer>
+
+  <!-- Particles.js Script -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 70 },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        line_linked: {
+          enable: true,
+          distance: 120,
+          color: "#ffffff",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          random: false,
+          straight: false,
+          out_mode: "out"
+        }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "grab" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          grab: { distance: 140, line_linked: { opacity: 0.6 } },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
 </body>
 </html>
